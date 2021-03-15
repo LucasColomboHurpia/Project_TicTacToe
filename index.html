@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body id='body'>
+
+<div id='grid'>
+    <div id='SQ1' class='SQR'></div>
+    <div id='SQ2' class='SQR'></div>
+    <div id='SQ3' class='SQR'></div>
+    <div id='SQ4' class='SQR'></div>
+    <div id='SQ5' class='SQR'></div>
+    <div id='SQ6' class='SQR'></div>
+    <div id='SQ7' class='SQR'></div>
+    <div id='SQ8' class='SQR'></div>
+    <div id='SQ9' class='SQR'></div>
+</div>
+
+<img id='btnReset' class="btn reset" onclick="Reload()" title="Reset" src="./Assets/round_settings_backup_restore_black_18dp.png">
+
+<div id='pickbox'>
+    <div id="pickText">Choose Symbol</div>
+<div id='Xpick' class="pick" onclick='pickX()'>X</div>
+<div id='Opick' class="pick" onclick='pickO()'>O</div>
+</div>
+
+
+</body>
+
+<script src="script.js"></script>
+</html>

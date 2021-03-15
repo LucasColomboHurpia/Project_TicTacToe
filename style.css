@@ -1,0 +1,112 @@
+body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
+
+#grid{
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+
+    width: fit-content;
+
+    margin-top: 5%;
+
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 150px 150px 150px; 
+    grid-template-rows: 150px 150px 150px; 
+
+    justify-items: auto; 
+    align-items: auto;  
+
+    justify-content: center; 
+    align-content:center;
+}
+
+.SQR{
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+    display: flex;
+    justify-content: center; 
+    align-content:center;
+
+    align-items: center;
+
+    font-size: 400%;
+    font-weight: 800;
+
+}
+
+.SQR:hover{
+    cursor: pointer;
+    background-color: rgb(163, 24, 24);
+}
+
+@keyframes changeColor{
+    0%{color: yellow;}
+    25%{color: blue;}
+    50%{color: red;}
+    75%{color: green;}  
+    100%{color: purple;}
+   }
+.rainbow{
+    animation-name: changeColor;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+#btnReset:hover{
+    width: 40px;
+    background-color: rgb(99, 98, 98);
+}
+
+.btn{
+    position: fixed;
+    top: 88%;
+    left: 92%;
+    border-radius: 100%;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    color: white; 
+    box-shadow: 0px 5px 10px #49496157;
+    padding: 15px;
+    cursor: pointer;
+}
+
+@keyframes changeColor1{
+    0%{background-color: blue;}
+    25%{background-color: red;}
+    50%{background-color: green;}
+    75%{background-color: yellow;}
+    100%{background-color: purple;}
+   }
+.rainbow1{
+    animation-name: changeColor1;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+.hide{display: none}
+
+#pickbox{
+    color: white;
+    position: fixed;
+    top: 1%;
+
+    text-align: center;
+
+    left: 1%;
+}
+
+.pick{
+    font-size: 700%;
+    font-weight: 700;
+}
+.pick:hover{color: rgb(163, 24, 24);cursor: pointer;}
+
+.chosen{color:rgb(218, 32, 218)}
+
+#pickText{font-size: 0.8rem; font-weight: bold; text-align: center;}
