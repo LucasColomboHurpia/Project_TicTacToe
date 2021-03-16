@@ -30,7 +30,7 @@ body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
 
     align-items: center;
 
-    font-size: 400%;
+    font-size: 700%;
     font-weight: 800;
 
 }
@@ -110,3 +110,32 @@ body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
 .chosen{color:rgb(218, 32, 218)}
 
 #pickText{font-size: 0.8rem; font-weight: bold; text-align: center;}
+
+@media (max-width: 775px) {
+
+    .SQR{font-size: 400%;}
+
+    #grid{
+
+        grid-template-columns: 80px 80px 80px; 
+        grid-template-rows: 80px 80px 80px; }
+
+        .btn{
+            top: 85%;
+            left: 75%;
+        }
+        #pickbox{ display: grid;
+            color: white;
+            position: fixed;
+            top: 80%;
+
+            grid-template-columns: auto auto auto; 
+            grid-template-rows: auto ; 
+
+            align-items: center;
+            justify-content: center;
+        }
+        #pickText{display: none;}
+
+
+} 
