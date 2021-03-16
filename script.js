@@ -46,6 +46,8 @@ onload = function () {
     let getEnemyPickStore = localStorage.getItem('getEnemyPickStore')
     pick = getPickStore;
     enemyPick = getEnemyPickStore;
+    
+    if(localStorage.length == 0){pickX()}
     if(pick=='X'){pickX()}
     if(pick=='O'){pickO()}
 
