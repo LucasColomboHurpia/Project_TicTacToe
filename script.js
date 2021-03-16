@@ -37,8 +37,6 @@ Opick.classList.add('chosen'); Xpick.classList.remove('chosen');checkIfHide();up
 const checkIfHide = () => {for(i=0;i<SQlist.length;i++){if(SQlist[i]==1){counter++}}
 if(counter>0){pickbox.classList.add('hide')}}
 
-const clickFunction = () => {if(victoryFactor!=1 && drawVar!=1){Adversary()}checkIfHide();}
-
 const updateStorage = () =>{
 localStorage.setItem('pickStore', pick)
 localStorage.setItem('enemyPickStore', enemyPick)}
@@ -55,13 +53,14 @@ onload = function () {
     if (errorAlertcheck>0){window.alert("An error has ocurred"); localStorage.setItem('loopErrorReloadCheck',loopErrorCheck)}
 }
 
-
 const SQRclick = (x,y) =>{
     if(SQlist[x]==0){
         SQlist[x]=1
         y.innerHTML = pick;
         clickFunction()}
 }
+
+const clickFunction = () => {if(victoryFactor!=1 && drawVar!=1){Adversary()}checkIfHide();}
 
 SQ1.onclick = function(){SQRclick(0, SQ1)}
 
@@ -86,8 +85,8 @@ let n = 0;
 const checkVictorys = () => victoryFactor!=1
 
 const Adversary = () =>{ checkVictory();
-    if(checkVictorys)
-{    checkDraw();
+    if(checkVictorys){
+            checkDraw();
     n = Math.floor(Math.random()*100)
     adversaryPlay();}
 }
