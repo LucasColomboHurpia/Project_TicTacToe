@@ -20,6 +20,9 @@ let counter = 0;
 
 let SQlist = [0,0,0,0,0,0,0,0,0]
 
+let playerScore = document.getElementById('playerScore');
+let enemyScore = document.getElementById('enemyScore');
+
 let Xpick = document.getElementById('Xpick');
 let Opick = document.getElementById('Opick');
 let pickbox = document.getElementById('pickbox');
@@ -29,9 +32,11 @@ Xpick.classList.add('chosen')
 let pick = 'X'
 let enemyPick = 'O'
 
-const pickX = () => {pick = 'X';enemyPick='O';
+/* localStorage.clear() */
+
+const pickX = () => {pick = 'X';enemyPick='O'; 
 Xpick.classList.add('chosen'); Opick.classList.remove('chosen');checkIfHide();updateStorage()}
-const pickO = () => {pick = 'O';enemyPick='X';
+const pickO = () => {pick = 'O';enemyPick='X'; 
 Opick.classList.add('chosen'); Xpick.classList.remove('chosen');checkIfHide();updateStorage()}
 
 const checkIfHide = () => {for(i=0;i<SQlist.length;i++){if(SQlist[i]==1){counter++}}
@@ -39,20 +44,30 @@ if(counter>0){pickbox.classList.add('hide')}}
 
 const updateStorage = () =>{
 localStorage.setItem('pickStore', pick)
-localStorage.setItem('enemyPickStore', enemyPick)}
+localStorage.setItem('enemyPickStore', enemyPick)
+}
+
+let pScore = document.getElementById('pScore')
+let aScore = document.getElementById('aScore')
 
 onload = function () {
     let getPickStore = localStorage.getItem('pickStore')
     let getEnemyPickStore = localStorage.getItem('getEnemyPickStore')
     pick = getPickStore;
     enemyPick = getEnemyPickStore;
-    
-    if(localStorage.length == 0){pickX()}
+
+    if(localStorage.length == 0){pickX();}
     if(pick=='X'){pickX()}
     if(pick=='O'){pickO()}
 
     let errorAlertcheck = localStorage.getItem('loopErrorReloadCheck')
     if (errorAlertcheck>0){window.alert("An error has ocurred"); localStorage.setItem('loopErrorReloadCheck',loopErrorCheck)}
+   
+    pScore.innerHTML = localStorage.getItem('pScoreStorage'); 
+    aScore.innerHTML = localStorage.getItem('aScoreStorage');
+
+   if(pScore.innerHTML==''){pScore.innerHTML=0}
+   if(aScore.innerHTML==''){aScore.innerHTML=0}
 }
 
 const SQRclick = (x,y) =>{
@@ -160,10 +175,13 @@ const victory = (x,y) => {
 
  btnReset.classList.add('rainbow1');
 
- if(x == pick)
- grid.style.backgroundColor = "#31FF4E";
- if(x == enemyPick)
- grid.style.backgroundColor = "#FF0F0F";
+ if(x == pick){pScore.innerHTML++;localStorage.setItem('pScoreStorage', pScore.innerHTML);
+ grid.style.backgroundColor = "#31FF4E"; playerScore.style.color = "#31FF4E"}
+
+ if(x == enemyPick){aScore.innerHTML++;localStorage.setItem('aScoreStorage', aScore.innerHTML)
+ grid.style.backgroundColor = "#FF0F0F"; enemyScore.style.color = "#FF0F0F"}
+
+ updateStorage();
 
  victoryFactor = 1;
  for(i=0;i<SQlist.length;i++){SQlist[i]=1}
@@ -171,12 +189,19 @@ const victory = (x,y) => {
 
 const paintRainbow = (x,y,z) => {x.classList.add('rainbow');y.classList.add('rainbow');z.classList.add('rainbow')}
 
-function Reload(){
-    location.reload()
-  }
+const Reload = () => {location.reload()}
+
+const resetScore = () => {localStorage.clear();location.reload()}
 
  const errorProcedure = () =>{
      loopErrorCheck = 1
      localStorage.setItem('loopErrorReloadCheck', loopErrorCheck)
      Reload();
  }
+
+
+
+
+
+ 
+

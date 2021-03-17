@@ -1,5 +1,14 @@
 body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
 
+#score{color:white; 
+position: fixed;
+text-align: right;
+top: 2%;
+left: 93%;
+font-weight: bold;
+
+cursor:default}
+
 #grid{
     background-color: rgb(255, 255, 255);
     margin: auto;
@@ -101,6 +110,8 @@ body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
     left: 1%;
 }
 
+#score:hover{color: rgb(218, 32, 218);cursor:pointer;}
+
 .pick{
     font-size: 700%;
     font-weight: 700;
@@ -109,7 +120,7 @@ body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
 
 .chosen{color:rgb(218, 32, 218)}
 
-#pickText{font-size: 0.8rem; font-weight: bold; text-align: center;}
+#pickText{font-size: 0.8rem; font-weight: bold; text-align: center;cursor:default}
 
 @media (max-width: 775px) {
 
@@ -132,4 +143,12 @@ body{background-color: black; font-family: 'Varela Round', verdana, sans-serif;}
         #pickText{display: none;}
         #Opick{display: inline;}
         #Xpick{display: inline;}
+
+        #score{color:white; 
+            position: fixed;
+            text-align: right;
+            top: 65%;
+            left: 75%;
+            font-weight: bold;
+            
 } 
